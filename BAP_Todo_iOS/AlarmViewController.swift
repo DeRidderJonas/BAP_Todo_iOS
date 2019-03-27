@@ -1,5 +1,5 @@
 //
-//  FirstViewController.swift
+//  SecondViewController.swift
 //  BAP_Todo_iOS
 //
 //  Created by Jonas De Ridder on 27/03/2019.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FirstViewController: UIViewController {
+class AlarmViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

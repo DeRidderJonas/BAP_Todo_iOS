@@ -1,5 +1,5 @@
 //
-//  SecondViewController.swift
+//  FirstViewController.swift
 //  BAP_Todo_iOS
 //
 //  Created by Jonas De Ridder on 27/03/2019.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SecondViewController: UIViewController {
+class TasksViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
