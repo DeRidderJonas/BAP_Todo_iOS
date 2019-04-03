@@ -31,12 +31,21 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hEv-Q4-8Gb">
+                                <rect key="frame" x="146" y="491" width="79" height="30"/>
+                                <state key="normal" title="Create task"/>
+                                <connections>
+                                    <action selector="create_task:" destination="9pv-A4-QxB" eventType="touchUpInside" id="5fi-ly-bZU"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="KQZ-1w-vlD" secondAttribute="centerX" id="6BV-lF-sBN"/>
                             <constraint firstItem="EG6-Os-tqF" firstAttribute="top" secondItem="KQZ-1w-vlD" secondAttribute="bottom" constant="52" id="Dsn-aa-xSE"/>
+                            <constraint firstItem="PQr-Ze-W5v" firstAttribute="bottom" secondItem="hEv-Q4-8Gb" secondAttribute="bottom" constant="97" id="GWL-PP-ulN"/>
                             <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="EG6-Os-tqF" secondAttribute="trailing" constant="64" id="JUf-9C-VC4"/>
+                            <constraint firstItem="hEv-Q4-8Gb" firstAttribute="centerX" secondItem="EG6-Os-tqF" secondAttribute="centerX" id="Xl4-D5-WsQ"/>
                             <constraint firstAttribute="centerY" secondItem="KQZ-1w-vlD" secondAttribute="centerY" constant="263" id="exm-UA-ej4"/>
                             <constraint firstItem="EG6-Os-tqF" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" constant="60" id="t6M-E1-IaZ"/>
                         </constraints>
@@ -80,9 +89,13 @@
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mgJ-Db-4fY">
                                 <rect key="frame" x="90" y="136" width="51" height="31"/>
                             </switch>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wuV-V0-5gd" colorLabel="IBBuiltInLabel-Blue">
-                                <rect key="frame" x="40" y="185" width="41" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wt3-ep-nQN">
+                                <rect key="frame" x="46" y="205" width="34" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="button_save:" destination="XkZ-hb-9jg" eventType="touchUpInside" id="iTv-Tj-EC8"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -92,20 +105,16 @@
                             <constraint firstItem="pTY-sy-Txs" firstAttribute="leading" secondItem="UAE-5F-jor" secondAttribute="leading" id="GKk-FE-wHa"/>
                             <constraint firstItem="Meg-pG-BOO" firstAttribute="leading" secondItem="pTY-sy-Txs" secondAttribute="leading" id="NO7-bf-9ps"/>
                             <constraint firstItem="UAE-5F-jor" firstAttribute="centerY" secondItem="mgJ-Db-4fY" secondAttribute="centerY" id="UIw-LD-ugA"/>
-                            <constraint firstItem="wuV-V0-5gd" firstAttribute="leading" secondItem="NdL-y6-krh" secondAttribute="leading" constant="40" id="aG8-oW-4ti"/>
-                            <constraint firstItem="NdL-y6-krh" firstAttribute="trailing" secondItem="wuV-V0-5gd" secondAttribute="trailing" constant="294" id="pWH-3b-K5l"/>
                             <constraint firstItem="pTY-sy-Txs" firstAttribute="top" secondItem="Meg-pG-BOO" secondAttribute="bottom" constant="8" symbolic="YES" id="seL-li-iT3"/>
                             <constraint firstItem="mgJ-Db-4fY" firstAttribute="top" secondItem="pTY-sy-Txs" secondAttribute="bottom" constant="19" id="wvQ-9t-WgR"/>
                             <constraint firstItem="Meg-pG-BOO" firstAttribute="leading" secondItem="NdL-y6-krh" secondAttribute="leading" constant="40" id="xT1-Ml-U3u"/>
                             <constraint firstItem="mgJ-Db-4fY" firstAttribute="leading" secondItem="UAE-5F-jor" secondAttribute="trailing" constant="9" id="xzK-Vx-gb9"/>
-                            <constraint firstItem="wuV-V0-5gd" firstAttribute="top" secondItem="mgJ-Db-4fY" secondAttribute="bottom" constant="18" id="yJc-gT-pnR"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="NdL-y6-krh"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Task Detail" image="first" id="jyH-q0-nSd"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="saveButton" destination="wuV-V0-5gd" id="5FE-Gb-ixJ"/>
                         <outlet property="taskDoneSwitch" destination="mgJ-Db-4fY" id="91d-rB-ek4"/>
                         <outlet property="taskTitleTextField" destination="pTY-sy-Txs" id="q3U-C6-qJK"/>
                     </connections>

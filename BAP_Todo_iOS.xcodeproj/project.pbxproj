@@ -31,6 +31,7 @@
 /* Begin PBXFileReference section */
 		25159F172254D0190017388E /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		25159F192254D13E0017388E /* TaskDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailViewController.swift; sourceTree = "<group>"; };
+		25159F1C2254E5E70017388E /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		251A9B02224B977B00653FEF /* BAP_Todo_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BAP_Todo_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		251A9B05224B977B00653FEF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		251A9B07224B977B00653FEF /* TasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
@@ -62,12 +63,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		25159F1B2254E5E70017388E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				25159F1C2254E5E70017388E /* libsqlite3.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		251A9AF9224B977B00653FEF = {
 			isa = PBXGroup;
 			children = (
 				251A9B04224B977B00653FEF /* BAP_Todo_iOS */,
 				251A9B1B224B977B00653FEF /* BAP_Todo_iOSTests */,
 				251A9B03224B977B00653FEF /* Products */,
+				25159F1B2254E5E70017388E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
