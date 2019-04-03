@@ -9,10 +9,17 @@
 import UIKit
 
 class TasksViewController: UIViewController {
+    
+    //Mark: Properties
+    @IBOutlet weak var taskTitleLabel: UILabel!
+    
+    
+    var task: Task = Task(id: -1, title: "testString", done: false);
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        taskTitleLabel.text = task.title;
     }
 
 
