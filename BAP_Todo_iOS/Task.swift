@@ -15,11 +15,15 @@ class Task: NSObject, NSCoding {
     var id: Int;
     var title: String;
     var done: Bool;
+    var deadline: String;
+    var extra: String;
     
-    init(id: Int, title: String, done: Bool) {
+    init(id: Int, title: String, done: Bool, deadline: String, extra: String) {
         self.id = id;
         self.title = title;
         self.done = done;
+        self.deadline = deadline;
+        self.extra = extra;
     }
     
     //MARK: Types
@@ -27,6 +31,8 @@ class Task: NSObject, NSCoding {
         static let id = "id"
         static let title = "title"
         static let done = "done"
+        static let deadline = "deadline"
+        static let extra = "extra"
     }
     
     //MARK: NSCoding
@@ -34,6 +40,8 @@ class Task: NSObject, NSCoding {
         aCoder.encode(id, forKey: PropertyKey.id);
         aCoder.encode(title, forKey: PropertyKey.title);
         aCoder.encode(done, forKey: PropertyKey.done);
+        aCoder.encode(deadline, forKey: PropertyKey.deadline);
+        aCoder.encode(extra, forKey: PropertyKey.extra);
     }
     
     required convenience init?(coder aDecoder: NSCoder) {
@@ -43,6 +51,14 @@ class Task: NSObject, NSCoding {
             os_log("Unable to decode title for Task object", log: OSLog.default, type: .debug)
             return nil;
         }
-        self.init(id: id,title: title,done: done);
+        guard let deadline = aDecoder.decodeObject(forKey: PropertyKey.deadline) as? String else {
+            os_log("Unable to decide deadline for Task object", log: OSLog.default, type: .debug)
+            return nil;
+        }
+        guard let extra = aDecoder.decodeObject(forKey: PropertyKey.extra) as? String else {
+            os_log("Unable to decide extra for Task object", log: OSLog.default, type: .debug)
+            return nil;
+        }
+        self.init(id: id,title: title,done: done, deadline: deadline, extra: extra);
     }
 }
