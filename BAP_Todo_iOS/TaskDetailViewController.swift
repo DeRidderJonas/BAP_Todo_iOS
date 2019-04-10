@@ -9,13 +9,17 @@
 import UIKit
 import SQLite3
 
-class TaskDetailViewController: UIViewController, UITextFieldDelegate {
+class TaskDetailViewController: UIViewController, UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
+    
     
     //Mark: Properties
     var db: OpaquePointer?;
     var task: Task = Task(id: -1, title: "placeholder", done: false, deadline: "placeholder", extra: "placeholder")
     var currentTaskId: Int = -1;
     internal let SQL_TRANSIENT = unsafeBitCast(-1, to: sqlite3_destructor_type.self)
+    
+    let datepicker = UIDatePicker()
+    var showDatepicker = false;
     
     @IBOutlet weak var taskTitleTextField: UITextField!
     @IBOutlet weak var taskDoneSwitch: UISwitch!
@@ -54,21 +58,50 @@ class TaskDetailViewController: UIViewController, UITextFieldDelegate {
     }
     @IBOutlet weak var deadlineButton: UIButton!
     @IBAction func deadline_button(_ sender: Any) {
-        print("deadline button pressed")
+        if !showDatepicker {
+            datepicker.datePickerMode = UIDatePicker.Mode.date
+            datepicker.addTarget(self, action: #selector(dueDateChanged(sender:)), for: UIControl.Event.valueChanged)
+            let pickerSize: CGSize = datepicker.sizeThatFits(CGSize.zero)
+            datepicker.frame = CGRect(x:0.0, y:250, width:pickerSize.width, height:460)
+            self.view.addSubview(datepicker)
+            showDatepicker = true;
+        } else {
+            datepicker.removeFromSuperview()
+            showDatepicker = false;
+        }
+        
     }
     @IBOutlet weak var extraButton: UIButton!
     @IBAction func extra_button(_ sender: Any) {
         print("extra button pressed")
     }
+    let dropdownOptions = ["None", "Not important"]
+    @IBOutlet weak var extraDropdownTextField: UITextField!
+    @IBOutlet weak var extraTextView: UITextView!
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        // title & done
         taskTitleTextField.delegate = self;
         taskDoneSwitch.addTarget(self, action: #selector(self.switchValueDidChange(sender:)), for: .valueChanged)
+        // extra
+        let pickerView = UIPickerView()
+        pickerView.delegate = self;
+        extraDropdownTextField.inputView = pickerView;
+        extraDropdownTextField.delegate = self;
         
+        //load task
+        loadTask()
+        
+        taskTitleTextField.text = task.title;
+        taskDoneSwitch.isOn = task.done;
+        deadlineButton.setTitle(task.deadline, for: .normal)
+        extraTextView.text = task.extra
+    }
+    
+    func loadTask(){
         currentTaskId = UserDefaults.standard.integer(forKey: "currentTaskId")
         
         let fileURL = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false).appendingPathComponent("tasks.sqlite")
@@ -111,11 +144,6 @@ class TaskDetailViewController: UIViewController, UITextFieldDelegate {
             task.deadline = deadline;
             task.extra = extra;
         }
-        
-        taskTitleTextField.text = task.title;
-        taskDoneSwitch.isOn = task.done;
-        deadlineButton.setTitle(task.deadline, for: .normal)
-        extraButton.setTitle(task.extra, for: .normal)
     }
     
     //Mark: UITextFieldDelegate
@@ -130,5 +158,34 @@ class TaskDetailViewController: UIViewController, UITextFieldDelegate {
     //Mark: UISwitch
     @objc func switchValueDidChange(sender: UISwitch) {
         task.done = sender.isOn;
+    }
+    
+    //Mark: datepicker
+    @objc func dueDateChanged(sender:UIDatePicker){
+        let dateFormatter = DateFormatter();
+        dateFormatter.dateStyle = .short;
+        dateFormatter.timeStyle = .none;
+        let dateString = dateFormatter.string(from: sender.date)
+        task.deadline = dateString
+        deadlineButton.setTitle(dateString, for: .normal)
+    }
+    
+    //Mark: Dropdown
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return dropdownOptions.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return dropdownOptions[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        extraDropdownTextField.text = dropdownOptions[row]
+        extraTextView.text = dropdownOptions[row]
+        task.extra = dropdownOptions[row]
     }
 }

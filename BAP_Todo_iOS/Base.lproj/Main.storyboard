@@ -89,14 +89,6 @@
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mgJ-Db-4fY">
                                 <rect key="frame" x="90" y="136" width="51" height="31"/>
                             </switch>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wt3-ep-nQN">
-                                <rect key="frame" x="43" y="277" width="34" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Save"/>
-                                <connections>
-                                    <action selector="button_save:" destination="XkZ-hb-9jg" eventType="touchUpInside" id="iTv-Tj-EC8"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Deadline" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P2f-nd-sFF">
                                 <rect key="frame" x="43" y="186" width="67" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -118,34 +110,56 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CCl-13-Wrt">
-                                <rect key="frame" x="129" y="228" width="230" height="30"/>
+                                <rect key="frame" x="99" y="223" width="86" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="230" id="ou3-Zq-m9c"/>
+                                    <constraint firstAttribute="width" constant="86" id="ou3-Zq-m9c"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Scan QR"/>
                                 <connections>
                                     <action selector="extra_button:" destination="XkZ-hb-9jg" eventType="touchUpInside" id="LE8-Fg-8x9"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CFW-2q-4G3">
+                                <rect key="frame" x="227" y="223" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="OEV-Ha-D5N">
+                                <rect key="frame" x="40" y="257" width="300" height="76"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wt3-ep-nQN">
+                                <rect key="frame" x="40" y="341" width="34" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="button_save:" destination="XkZ-hb-9jg" eventType="touchUpInside" id="iTv-Tj-EC8"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Meg-pG-BOO" firstAttribute="top" secondItem="NdL-y6-krh" secondAttribute="top" constant="38" id="0eM-HA-Nkh"/>
-                            <constraint firstItem="CCl-13-Wrt" firstAttribute="top" secondItem="QkP-K7-EoW" secondAttribute="top" id="8DC-Rg-fx9"/>
+                            <constraint firstItem="CCl-13-Wrt" firstAttribute="top" secondItem="QkP-K7-EoW" secondAttribute="top" constant="-5" id="8DC-Rg-fx9"/>
                             <constraint firstItem="NdL-y6-krh" firstAttribute="trailing" secondItem="pTY-sy-Txs" secondAttribute="trailing" constant="238" id="EfF-Ve-odl"/>
                             <constraint firstItem="pTY-sy-Txs" firstAttribute="leading" secondItem="UAE-5F-jor" secondAttribute="leading" id="GKk-FE-wHa"/>
                             <constraint firstItem="Meg-pG-BOO" firstAttribute="leading" secondItem="pTY-sy-Txs" secondAttribute="leading" id="NO7-bf-9ps"/>
-                            <constraint firstItem="NdL-y6-krh" firstAttribute="bottom" secondItem="CCl-13-Wrt" secondAttribute="bottom" constant="360" id="QME-V8-f0g"/>
-                            <constraint firstItem="CCl-13-Wrt" firstAttribute="trailing" secondItem="lbr-Sy-hxH" secondAttribute="trailing" id="S3L-Pd-XfX"/>
-                            <constraint firstItem="CCl-13-Wrt" firstAttribute="leading" secondItem="QkP-K7-EoW" secondAttribute="trailing" constant="49" id="U7h-ow-hmE"/>
+                            <constraint firstItem="NdL-y6-krh" firstAttribute="bottom" secondItem="CCl-13-Wrt" secondAttribute="bottom" constant="365" id="QME-V8-f0g"/>
+                            <constraint firstItem="CCl-13-Wrt" firstAttribute="trailing" secondItem="lbr-Sy-hxH" secondAttribute="trailing" constant="-174" id="S3L-Pd-XfX"/>
+                            <constraint firstItem="CCl-13-Wrt" firstAttribute="leading" secondItem="QkP-K7-EoW" secondAttribute="trailing" constant="19" id="U7h-ow-hmE"/>
                             <constraint firstItem="UAE-5F-jor" firstAttribute="centerY" secondItem="mgJ-Db-4fY" secondAttribute="centerY" id="UIw-LD-ugA"/>
-                            <constraint firstItem="CCl-13-Wrt" firstAttribute="top" secondItem="lbr-Sy-hxH" secondAttribute="bottom" constant="24" id="cYC-mk-JIm"/>
+                            <constraint firstItem="CCl-13-Wrt" firstAttribute="top" secondItem="lbr-Sy-hxH" secondAttribute="bottom" constant="19" id="cYC-mk-JIm"/>
                             <constraint firstItem="pTY-sy-Txs" firstAttribute="top" secondItem="Meg-pG-BOO" secondAttribute="bottom" constant="8" symbolic="YES" id="seL-li-iT3"/>
-                            <constraint firstItem="CCl-13-Wrt" firstAttribute="trailing" secondItem="GpB-l9-146" secondAttribute="trailingMargin" id="w20-r5-Wse"/>
+                            <constraint firstItem="CCl-13-Wrt" firstAttribute="trailing" secondItem="GpB-l9-146" secondAttribute="trailingMargin" constant="-174" id="w20-r5-Wse"/>
                             <constraint firstItem="mgJ-Db-4fY" firstAttribute="top" secondItem="pTY-sy-Txs" secondAttribute="bottom" constant="19" id="wvQ-9t-WgR"/>
                             <constraint firstItem="Meg-pG-BOO" firstAttribute="leading" secondItem="NdL-y6-krh" secondAttribute="leading" constant="40" id="xT1-Ml-U3u"/>
                             <constraint firstItem="mgJ-Db-4fY" firstAttribute="leading" secondItem="UAE-5F-jor" secondAttribute="trailing" constant="9" id="xzK-Vx-gb9"/>
-                            <constraint firstItem="CCl-13-Wrt" firstAttribute="leading" secondItem="lbr-Sy-hxH" secondAttribute="leading" id="yJu-TC-zXr"/>
+                            <constraint firstItem="CCl-13-Wrt" firstAttribute="leading" secondItem="lbr-Sy-hxH" secondAttribute="leading" constant="-30" id="yJu-TC-zXr"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="NdL-y6-krh"/>
                     </view>
@@ -154,6 +168,8 @@
                     <connections>
                         <outlet property="deadlineButton" destination="lbr-Sy-hxH" id="4Pe-QX-4Hr"/>
                         <outlet property="extraButton" destination="CCl-13-Wrt" id="rLl-OW-XPY"/>
+                        <outlet property="extraDropdownTextField" destination="CFW-2q-4G3" id="e48-Gj-MCW"/>
+                        <outlet property="extraTextView" destination="OEV-Ha-D5N" id="iAy-gk-4I2"/>
                         <outlet property="taskDoneSwitch" destination="mgJ-Db-4fY" id="91d-rB-ek4"/>
                         <outlet property="taskTitleTextField" destination="pTY-sy-Txs" id="q3U-C6-qJK"/>
                     </connections>
