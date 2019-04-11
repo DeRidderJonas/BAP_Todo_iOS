@@ -11,56 +11,6 @@
     </dependencies>
     <scenes>
         <!--Tasks-->
-        <scene sceneID="hNz-n2-bh7">
-            <objects>
-                <viewController id="9pv-A4-QxB" customClass="TasksViewController" customModule="BAP_Todo_iOS" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Tasks" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="KQZ-1w-vlD">
-                                <rect key="frame" x="144" y="49" width="87" height="43"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="taskTitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EG6-Os-tqF">
-                                <rect key="frame" x="60" y="144" width="251" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hEv-Q4-8Gb">
-                                <rect key="frame" x="146" y="491" width="79" height="30"/>
-                                <state key="normal" title="Create task"/>
-                                <connections>
-                                    <action selector="create_task:" destination="9pv-A4-QxB" eventType="touchUpInside" id="5fi-ly-bZU"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstAttribute="centerX" secondItem="KQZ-1w-vlD" secondAttribute="centerX" id="6BV-lF-sBN"/>
-                            <constraint firstItem="EG6-Os-tqF" firstAttribute="top" secondItem="KQZ-1w-vlD" secondAttribute="bottom" constant="52" id="Dsn-aa-xSE"/>
-                            <constraint firstItem="PQr-Ze-W5v" firstAttribute="bottom" secondItem="hEv-Q4-8Gb" secondAttribute="bottom" constant="97" id="GWL-PP-ulN"/>
-                            <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="EG6-Os-tqF" secondAttribute="trailing" constant="64" id="JUf-9C-VC4"/>
-                            <constraint firstItem="hEv-Q4-8Gb" firstAttribute="centerX" secondItem="EG6-Os-tqF" secondAttribute="centerX" id="Xl4-D5-WsQ"/>
-                            <constraint firstAttribute="centerY" secondItem="KQZ-1w-vlD" secondAttribute="centerY" constant="263" id="exm-UA-ej4"/>
-                            <constraint firstItem="EG6-Os-tqF" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" constant="60" id="t6M-E1-IaZ"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Tasks" image="first" id="acW-dT-cKf"/>
-                    <connections>
-                        <outlet property="taskTitleLabel" destination="EG6-Os-tqF" id="BH1-ET-p0o"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="749.60000000000002" y="-320.68965517241384"/>
-        </scene>
-        <!--Item-->
         <scene sceneID="lC0-1d-zME">
             <objects>
                 <collectionViewController id="s4M-4f-59U" customClass="TasksListViewControllerCollectionViewController" customModule="BAP_Todo_iOS" customModuleProvider="target" sceneMemberID="viewController">
@@ -140,7 +90,7 @@
                             <outlet property="delegate" destination="s4M-4f-59U" id="bYn-Mz-aTZ"/>
                         </connections>
                     </collectionView>
-                    <tabBarItem key="tabBarItem" title="Item" id="kp0-5V-nfg"/>
+                    <tabBarItem key="tabBarItem" title="Tasks" image="first" id="kp0-5V-nfg"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="collectionView" destination="A3j-fi-QFQ" id="Epc-3N-gCp"/>
@@ -342,10 +292,9 @@
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
-                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
-                        <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
-                        <segue destination="XkZ-hb-9jg" kind="relationship" relationship="viewControllers" id="eUD-oy-94W"/>
                         <segue destination="s4M-4f-59U" kind="relationship" relationship="viewControllers" id="x7W-aY-8Kb"/>
+                        <segue destination="XkZ-hb-9jg" kind="relationship" relationship="viewControllers" id="eUD-oy-94W"/>
+                        <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
