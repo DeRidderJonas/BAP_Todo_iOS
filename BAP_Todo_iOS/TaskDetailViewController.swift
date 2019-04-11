@@ -23,6 +23,7 @@ class TaskDetailViewController: UIViewController, UITextFieldDelegate, UIPickerV
     
     @IBOutlet weak var taskTitleTextField: UITextField!
     @IBOutlet weak var taskDoneSwitch: UISwitch!
+    
     @IBAction func button_save(_ sender: Any) {
         var stmt: OpaquePointer?
         let insertQuery = "update task set title = ?, done = ?, deadline = ?, extra = ? where id = ?"
@@ -56,6 +57,13 @@ class TaskDetailViewController: UIViewController, UITextFieldDelegate, UIPickerV
             print("Updated succesfully for id \(task.id)")
         }
     }
+    
+    @IBAction func button_refresh(_ sender: Any) {
+        print("button clicked")
+        print(UserDefaults.standard.integer(forKey: "currentTaskId"))
+        loadTask()
+    }
+    
     @IBOutlet weak var deadlineButton: UIButton!
     @IBAction func deadline_button(_ sender: Any) {
         if !showDatepicker {
@@ -71,10 +79,12 @@ class TaskDetailViewController: UIViewController, UITextFieldDelegate, UIPickerV
         }
         
     }
+    
     @IBOutlet weak var extraButton: UIButton!
     @IBAction func extra_button(_ sender: Any) {
         print("extra button pressed")
     }
+    
     let dropdownOptions = ["None", "Not important"]
     @IBOutlet weak var extraDropdownTextField: UITextField!
     @IBOutlet weak var extraTextView: UITextView!
@@ -94,11 +104,6 @@ class TaskDetailViewController: UIViewController, UITextFieldDelegate, UIPickerV
         
         //load task
         loadTask()
-        
-        taskTitleTextField.text = task.title;
-        taskDoneSwitch.isOn = task.done;
-        deadlineButton.setTitle(task.deadline, for: .normal)
-        extraTextView.text = task.extra
     }
     
     func loadTask(){
@@ -144,6 +149,11 @@ class TaskDetailViewController: UIViewController, UITextFieldDelegate, UIPickerV
             task.deadline = deadline;
             task.extra = extra;
         }
+        
+        taskTitleTextField.text = task.title;
+        taskDoneSwitch.isOn = task.done;
+        deadlineButton.setTitle(task.deadline, for: .normal)
+        extraTextView.text = task.extra
     }
     
     //Mark: UITextFieldDelegate

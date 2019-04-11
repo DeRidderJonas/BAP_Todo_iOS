@@ -59,6 +59,10 @@ class TasksViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         taskTitleLabel.text = task.title;
         
+        loadData();
+    }
+
+    func loadData(){
         let fileURL = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false).appendingPathComponent("tasks.sqlite")
         
         if sqlite3_open(fileURL.path, &db) != SQLITE_OK {
@@ -74,7 +78,5 @@ class TasksViewController: UIViewController {
         
         print("Everything is awesome")
     }
-
-
 }
 
