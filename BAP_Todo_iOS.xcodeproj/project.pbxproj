@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2513FEF7225F35A900F0958F /* TasksListViewControllerCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2513FEF6225F35A900F0958F /* TasksListViewControllerCollectionViewController.swift */; };
 		2513FEF9225F3F2F00F0958F /* TaskCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2513FEF8225F3F2F00F0958F /* TaskCollectionViewCell.swift */; };
+		2513FEFB225F48E400F0958F /* TasksHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2513FEFA225F48E400F0958F /* TasksHeaderView.swift */; };
 		25159F182254D0190017388E /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25159F172254D0190017388E /* Task.swift */; };
 		25159F1A2254D13E0017388E /* TaskDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25159F192254D13E0017388E /* TaskDetailViewController.swift */; };
 		251A9B06224B977B00653FEF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251A9B05224B977B00653FEF /* AppDelegate.swift */; };
@@ -33,6 +34,7 @@
 /* Begin PBXFileReference section */
 		2513FEF6225F35A900F0958F /* TasksListViewControllerCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksListViewControllerCollectionViewController.swift; sourceTree = "<group>"; };
 		2513FEF8225F3F2F00F0958F /* TaskCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCollectionViewCell.swift; sourceTree = "<group>"; };
+		2513FEFA225F48E400F0958F /* TasksHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksHeaderView.swift; sourceTree = "<group>"; };
 		25159F172254D0190017388E /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		25159F192254D13E0017388E /* TaskDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailViewController.swift; sourceTree = "<group>"; };
 		25159F1C2254E5E70017388E /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
@@ -101,6 +103,7 @@
 				251A9B07224B977B00653FEF /* TasksViewController.swift */,
 				251A9B09224B977B00653FEF /* AlarmViewController.swift */,
 				251A9B0B224B977B00653FEF /* Main.storyboard */,
+				2513FEFA225F48E400F0958F /* TasksHeaderView.swift */,
 				2513FEF8225F3F2F00F0958F /* TaskCollectionViewCell.swift */,
 				2513FEF6225F35A900F0958F /* TasksListViewControllerCollectionViewController.swift */,
 				251A9B0E224B977B00653FEF /* Assets.xcassets */,
@@ -224,6 +227,7 @@
 			files = (
 				25159F182254D0190017388E /* Task.swift in Sources */,
 				251A9B0A224B977B00653FEF /* AlarmViewController.swift in Sources */,
+				2513FEFB225F48E400F0958F /* TasksHeaderView.swift in Sources */,
 				2513FEF7225F35A900F0958F /* TasksListViewControllerCollectionViewController.swift in Sources */,
 				251A9B06224B977B00653FEF /* AppDelegate.swift in Sources */,
 				251A9B08224B977B00653FEF /* TasksViewController.swift in Sources */,

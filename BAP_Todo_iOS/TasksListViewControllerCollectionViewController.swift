@@ -60,17 +60,17 @@ class TasksListViewControllerCollectionViewController: UICollectionViewControlle
     
     //Mark: CollectionView
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return tasks.count
+        return 1
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        return tasks.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! TaskCollectionViewCell
         
-        let currentTask = tasks[indexPath.section]
+        let currentTask = tasks[indexPath.row]
         let displayDone = currentTask.done ? "DONE" : "TODO"
         let displayText = "\(currentTask.title) (\(displayDone))"
         
@@ -78,6 +78,18 @@ class TasksListViewControllerCollectionViewController: UICollectionViewControlle
         cell.id = currentTask.id;
         
         return cell;
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        switch kind {
+        case UICollectionView.elementKindSectionHeader:
+            guard let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "\(TasksHeaderView.self)", for: indexPath) as? TasksHeaderView else {
+                fatalError("Invalid view type")
+            }
+            return headerView
+        default:
+            assert(false, "Invalid element type")
+        }
     }
     
 }
