@@ -1,0 +1,16 @@
+PODS:
+  - QRCodeReader.swift (10.0.0)
+
+DEPENDENCIES:
+  - QRCodeReader.swift (~> 10.0.0)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - QRCodeReader.swift
+
+SPEC CHECKSUMS:
+  QRCodeReader.swift: 74d0378eb0c7807828552b49626bbc8307495aee
+
+PODFILE CHECKSUM: 551a1f9aad52c3dbd52f76389d5c8db2bb574f56
+
+COCOAPODS: 1.5.3

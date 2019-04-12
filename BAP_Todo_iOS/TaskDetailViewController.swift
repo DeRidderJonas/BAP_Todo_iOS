@@ -8,8 +8,40 @@
 
 import UIKit
 import SQLite3
+import AVFoundation
+import QRCodeReader
 
-class TaskDetailViewController: UIViewController, UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
+class TaskDetailViewController: UIViewController, UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate, QRCodeReaderViewControllerDelegate {
+    
+    //QR code scanner
+    lazy var readerVC: QRCodeReaderViewController = {
+        let builder = QRCodeReaderViewControllerBuilder {
+            $0.reader = QRCodeReader(metadataObjectTypes: [.qr], captureDevicePosition: .back)
+            
+            $0.showTorchButton = false
+            $0.showSwitchCameraButton = false
+            $0.showCancelButton = false
+            $0.showOverlayView = true
+            $0.rectOfInterest = CGRect(x: 0.2, y: 0.2, width: 0.6, height: 0.6)
+        }
+        
+        return QRCodeReaderViewController(builder: builder)
+    }()
+    
+    
+    
+    func reader(_ reader: QRCodeReaderViewController, didScanResult result: QRCodeReaderResult) {
+        reader.stopScanning()
+        
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func readerDidCancel(_ reader: QRCodeReaderViewController) {
+        reader.stopScanning()
+        
+        dismiss(animated: true, completion: nil)
+    }
+    
     
     
     //Mark: Properties
@@ -83,6 +115,11 @@ class TaskDetailViewController: UIViewController, UITextFieldDelegate, UIPickerV
     @IBOutlet weak var extraButton: UIButton!
     @IBAction func extra_button(_ sender: Any) {
         print("extra button pressed")
+        readerVC.delegate = self
+        readerVC.completionBlock = { (result: QRCodeReaderResult?) in self.task.extra = result?.value ?? "cancelled"; self.extraTextView.text = result?.value }
+        
+        readerVC.modalPresentationStyle = .formSheet
+        present(readerVC, animated: true, completion: nil)
     }
     
     let dropdownOptions = ["None", "Not important"]

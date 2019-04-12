@@ -18,6 +18,7 @@
 		251A9B0F224B977B00653FEF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 251A9B0E224B977B00653FEF /* Assets.xcassets */; };
 		251A9B12224B977B00653FEF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 251A9B10224B977B00653FEF /* LaunchScreen.storyboard */; };
 		251A9B1D224B977B00653FEF /* BAP_Todo_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251A9B1C224B977B00653FEF /* BAP_Todo_iOSTests.swift */; };
+		3EE5D1703E8F6104252FEF9A /* Pods_BAP_Todo_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECCC4BEF726F54E80A65476C /* Pods_BAP_Todo_iOS.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,9 @@
 		251A9B18224B977B00653FEF /* BAP_Todo_iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BAP_Todo_iOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		251A9B1C224B977B00653FEF /* BAP_Todo_iOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BAP_Todo_iOSTests.swift; sourceTree = "<group>"; };
 		251A9B1E224B977B00653FEF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		89996CDD18EE2A4FCA38E670 /* Pods-BAP_Todo_iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BAP_Todo_iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-BAP_Todo_iOS/Pods-BAP_Todo_iOS.release.xcconfig"; sourceTree = "<group>"; };
+		E4BFA94C170CEF364ED5F63F /* Pods-BAP_Todo_iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BAP_Todo_iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BAP_Todo_iOS/Pods-BAP_Todo_iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		ECCC4BEF726F54E80A65476C /* Pods_BAP_Todo_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BAP_Todo_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3EE5D1703E8F6104252FEF9A /* Pods_BAP_Todo_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				25159F1C2254E5E70017388E /* libsqlite3.tbd */,
+				ECCC4BEF726F54E80A65476C /* Pods_BAP_Todo_iOS.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -82,6 +88,7 @@
 				251A9B1B224B977B00653FEF /* BAP_Todo_iOSTests */,
 				251A9B03224B977B00653FEF /* Products */,
 				25159F1B2254E5E70017388E /* Frameworks */,
+				8B5443807816A2838DF91880 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -121,6 +128,15 @@
 			path = BAP_Todo_iOSTests;
 			sourceTree = "<group>";
 		};
+		8B5443807816A2838DF91880 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E4BFA94C170CEF364ED5F63F /* Pods-BAP_Todo_iOS.debug.xcconfig */,
+				89996CDD18EE2A4FCA38E670 /* Pods-BAP_Todo_iOS.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -128,9 +144,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 251A9B21224B977B00653FEF /* Build configuration list for PBXNativeTarget "BAP_Todo_iOS" */;
 			buildPhases = (
+				9BE694417641EB84BAC8B3E7 /* [CP] Check Pods Manifest.lock */,
 				251A9AFE224B977B00653FEF /* Sources */,
 				251A9AFF224B977B00653FEF /* Frameworks */,
 				251A9B00224B977B00653FEF /* Resources */,
+				DA29E415E07E1FAD35F4DF81 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -216,6 +234,53 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9BE694417641EB84BAC8B3E7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BAP_Todo_iOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DA29E415E07E1FAD35F4DF81 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-BAP_Todo_iOS/Pods-BAP_Todo_iOS-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/QRCodeReader.swift/QRCodeReader.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/QRCodeReader.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BAP_Todo_iOS/Pods-BAP_Todo_iOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		251A9AFE224B977B00653FEF /* Sources */ = {
@@ -388,9 +453,11 @@
 		};
 		251A9B22224B977B00653FEF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E4BFA94C170CEF364ED5F63F /* Pods-BAP_Todo_iOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7JFR792DM7;
 				INFOPLIST_FILE = BAP_Todo_iOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -405,9 +472,11 @@
 		};
 		251A9B23224B977B00653FEF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 89996CDD18EE2A4FCA38E670 /* Pods-BAP_Todo_iOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7JFR792DM7;
 				INFOPLIST_FILE = BAP_Todo_iOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
