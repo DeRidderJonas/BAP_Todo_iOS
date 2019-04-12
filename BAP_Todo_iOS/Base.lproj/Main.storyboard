@@ -235,40 +235,67 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Alarm" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="zEq-FU-wV5">
-                                <rect key="frame" x="142.5" y="62" width="90.5" height="43"/>
+                                <rect key="frame" x="142" y="62" width="91" height="43"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="alarm" translatesAutoresizingMaskIntoConstraints="NO" id="me0-j9-C2X">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="alarm" translatesAutoresizingMaskIntoConstraints="NO" id="me0-j9-C2X">
                                 <rect key="frame" x="37" y="141" width="31" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sox-X8-YGP">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sox-X8-YGP">
                                 <rect key="frame" x="76" y="141" width="97" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="None"/>
                                 <connections>
                                     <action selector="alarm_button:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="i0u-cp-6f2"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="On:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7g4-Hj-a6H">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="On:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7g4-Hj-a6H">
                                 <rect key="frame" x="37" y="191" width="27" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MOs-68-hD6">
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MOs-68-hD6">
                                 <rect key="frame" x="76" y="186" width="49" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PGJ-4M-x2k">
+                                <rect key="frame" x="37" y="279" width="306" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gwE-HQ-K0N">
+                                <rect key="frame" x="37" y="232" width="88" height="30"/>
+                                <state key="normal" title="Get Location"/>
+                                <connections>
+                                    <action selector="location_button:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="uAv-BL-pdX"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="PGJ-4M-x2k" secondAttribute="trailing" constant="32" id="5se-mp-FyF"/>
+                            <constraint firstItem="sox-X8-YGP" firstAttribute="leading" secondItem="MOs-68-hD6" secondAttribute="leading" id="A0G-Rs-RAd"/>
+                            <constraint firstItem="gwE-HQ-K0N" firstAttribute="top" secondItem="MOs-68-hD6" secondAttribute="bottom" constant="15" id="At1-dd-dfZ"/>
+                            <constraint firstItem="7g4-Hj-a6H" firstAttribute="leading" secondItem="gwE-HQ-K0N" secondAttribute="leading" id="NLK-pv-yfY"/>
+                            <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="sox-X8-YGP" secondAttribute="trailing" constant="202" id="Pse-c4-4OF"/>
+                            <constraint firstItem="sox-X8-YGP" firstAttribute="leading" secondItem="me0-j9-C2X" secondAttribute="trailing" constant="8" symbolic="YES" id="TSr-7h-3PK"/>
+                            <constraint firstItem="me0-j9-C2X" firstAttribute="leading" secondItem="7g4-Hj-a6H" secondAttribute="leading" id="Ug6-01-WUU"/>
+                            <constraint firstItem="MOs-68-hD6" firstAttribute="leading" secondItem="7g4-Hj-a6H" secondAttribute="trailing" constant="12" id="WfE-JD-cVU"/>
+                            <constraint firstItem="MOs-68-hD6" firstAttribute="top" secondItem="sox-X8-YGP" secondAttribute="bottom" constant="15" id="Xgs-uj-8XW"/>
+                            <constraint firstItem="7g4-Hj-a6H" firstAttribute="centerY" secondItem="MOs-68-hD6" secondAttribute="centerY" id="cgT-oq-9Ua"/>
+                            <constraint firstItem="O1u-W8-tvY" firstAttribute="bottom" secondItem="PGJ-4M-x2k" secondAttribute="bottom" constant="318" id="di7-vc-UqX"/>
+                            <constraint firstItem="PGJ-4M-x2k" firstAttribute="top" secondItem="gwE-HQ-K0N" secondAttribute="bottom" constant="17" id="eMZ-n8-t40"/>
+                            <constraint firstItem="gwE-HQ-K0N" firstAttribute="leading" secondItem="PGJ-4M-x2k" secondAttribute="leading" id="fuS-DU-rxr"/>
+                            <constraint firstItem="me0-j9-C2X" firstAttribute="top" secondItem="sox-X8-YGP" secondAttribute="top" id="gvs-cO-xwZ"/>
+                            <constraint firstItem="me0-j9-C2X" firstAttribute="top" secondItem="O1u-W8-tvY" secondAttribute="top" constant="121" id="hfw-4B-g14"/>
+                            <constraint firstItem="me0-j9-C2X" firstAttribute="bottom" secondItem="sox-X8-YGP" secondAttribute="bottom" id="m79-og-E3j"/>
                             <constraint firstAttribute="centerX" secondItem="zEq-FU-wV5" secondAttribute="centerX" id="qqM-NS-xev"/>
                             <constraint firstAttribute="centerY" secondItem="zEq-FU-wV5" secondAttribute="centerY" constant="250" id="qzY-Ky-pLD"/>
+                            <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="MOs-68-hD6" secondAttribute="trailing" constant="250" id="ry0-IV-FOI"/>
+                            <constraint firstItem="me0-j9-C2X" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" constant="37" id="xfG-VM-mv1"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
@@ -276,6 +303,7 @@
                     <connections>
                         <outlet property="alarmButton" destination="sox-X8-YGP" id="CIp-We-5SA"/>
                         <outlet property="enabledSwitch" destination="MOs-68-hD6" id="zIR-iu-ipu"/>
+                        <outlet property="locationText" destination="PGJ-4M-x2k" id="a4g-Vy-bex"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>

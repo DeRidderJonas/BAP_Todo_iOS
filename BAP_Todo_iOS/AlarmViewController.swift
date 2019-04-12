@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import CoreLocation
 
-class AlarmViewController: UIViewController {
+class AlarmViewController: UIViewController, CLLocationManagerDelegate {
 
     let timepicker = UIDatePicker()
     var showTimepicker = false;
+    var locationManager: CLLocationManager!;
     
     @IBOutlet weak var alarmButton: UIButton!
     @IBAction func alarm_button(_ sender: Any) {
@@ -28,6 +30,17 @@ class AlarmViewController: UIViewController {
         }
     }
     @IBOutlet weak var enabledSwitch: UISwitch!
+    @IBOutlet weak var locationText: UILabel!
+    @IBAction func location_button(_ sender: Any) {
+        locationManager = CLLocationManager()
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestAlwaysAuthorization()
+        
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.startUpdatingLocation()
+        }
+    }
     
     
     override func viewDidLoad() {
@@ -56,6 +69,17 @@ class AlarmViewController: UIViewController {
 
     @objc func switchValueDidChange(sender: UISwitch){
         UserDefaults.standard.set(sender.isOn, forKey: "alarmEnabled")
+    }
+
+    //Mark: LocationManagerDelegate
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let userLocation: CLLocation = locations[0] as CLLocation
+        manager.stopUpdatingLocation()
+        locationText.text = "Lat: \(userLocation.coordinate.latitude) Long: \(userLocation.coordinate.longitude)"
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("Error \(error)")
     }
 }
 
