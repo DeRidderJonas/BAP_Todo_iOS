@@ -75,7 +75,27 @@ class AlarmViewController: UIViewController, CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let userLocation: CLLocation = locations[0] as CLLocation
         manager.stopUpdatingLocation()
-        locationText.text = "Lat: \(userLocation.coordinate.latitude) Long: \(userLocation.coordinate.longitude)"
+        
+        var text = ""
+        
+        let url = URL(string: "https://api.timezonedb.com/v2.1/get-time-zone?key=BNC3MFRJAMK4&format=json&fields=abbreviation,formatted&by=position&lat=\(userLocation.coordinate.latitude)&lng=\(userLocation.coordinate.longitude)")
+        let request = URLSession.shared.dataTask(with: url!){ (data, response, error) in
+            if error == nil {
+                let response = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
+                text = response! as String
+                do {
+                    let jsonResult: Dictionary<String, String> = try JSONSerialization.jsonObject(with: data!, options: []) as! Dictionary<String, String>
+                    text = "Timezone: \(jsonResult["abbreviation"] ?? "") time: \(jsonResult["formatted"] ?? "")"
+                } catch let parsingError {
+                    print("Error", parsingError)
+                }
+                
+                
+            }
+        }
+        request.resume()
+        sleep(5)
+        locationText.text = text
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {

@@ -242,32 +242,32 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="alarm" translatesAutoresizingMaskIntoConstraints="NO" id="me0-j9-C2X">
-                                <rect key="frame" x="37" y="141" width="31" height="30"/>
+                                <rect key="frame" x="37" y="141" width="31" height="34"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sox-X8-YGP">
-                                <rect key="frame" x="76" y="141" width="97" height="30"/>
+                                <rect key="frame" x="76" y="141" width="97" height="34"/>
                                 <state key="normal" title="None"/>
                                 <connections>
                                     <action selector="alarm_button:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="i0u-cp-6f2"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="On:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7g4-Hj-a6H">
-                                <rect key="frame" x="37" y="191" width="27" height="21"/>
+                                <rect key="frame" x="37" y="195" width="27" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MOs-68-hD6">
-                                <rect key="frame" x="76" y="186" width="49" height="31"/>
+                                <rect key="frame" x="76" y="190" width="51" height="31"/>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PGJ-4M-x2k">
-                                <rect key="frame" x="37" y="279" width="306" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="37" y="283" width="306" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gwE-HQ-K0N">
-                                <rect key="frame" x="37" y="232" width="88" height="30"/>
+                                <rect key="frame" x="37" y="236" width="88" height="30"/>
                                 <state key="normal" title="Get Location"/>
                                 <connections>
                                     <action selector="location_button:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="uAv-BL-pdX"/>
