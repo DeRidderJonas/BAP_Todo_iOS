@@ -63,7 +63,6 @@ class TaskDetailViewController: UIViewController, UITextFieldDelegate, UIPickerV
             print("Error binding query")
         }
         
-        print("binding title: \(task.title)")
         if sqlite3_bind_text(stmt, 1, task.title, -1, SQL_TRANSIENT) != SQLITE_OK {
             print("Error binding name")
         }
@@ -91,7 +90,6 @@ class TaskDetailViewController: UIViewController, UITextFieldDelegate, UIPickerV
     }
     
     @IBAction func button_refresh(_ sender: Any) {
-        print("button clicked")
         print(UserDefaults.standard.integer(forKey: "currentTaskId"))
         loadTask()
     }
@@ -114,7 +112,6 @@ class TaskDetailViewController: UIViewController, UITextFieldDelegate, UIPickerV
     
     @IBOutlet weak var extraButton: UIButton!
     @IBAction func extra_button(_ sender: Any) {
-        print("extra button pressed")
         readerVC.delegate = self
         readerVC.completionBlock = { (result: QRCodeReaderResult?) in self.task.extra = result?.value ?? "cancelled"; self.extraTextView.text = result?.value }
         

@@ -14,7 +14,6 @@ class TaskCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var taskDisplayText: UILabel!
     @IBAction func active_button(_ sender: Any) {
-        print("setting active \(id)")
         UserDefaults.standard.set(id, forKey: "currentTaskId")
     }
 }
